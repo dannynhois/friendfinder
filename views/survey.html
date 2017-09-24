@@ -1,308 +1,227 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <!--Import Google Icon Font-->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!--Import materialize.css-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!--Let browser know website is optimized for mobile-->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Friend Finder</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.css">
+    <link href="assets/css/star.css" media="all" rel="stylesheet" type="text/css" />
+    <title>Pet Finder</title>
 </head>
 
 <body>
-    <nav class="blue darken-2">
-        <div class="nav-wrapper">
-            <a href="/package.json" class="brand-logo">Animal Finder</a>
-            <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li><a href="/api/friends">API</a></li>
-                <li><a href="https://www.github.com">GitHub</a></li>
-            </ul>
-        </div>
-    </nav>
-
     <div class="container">
         <div class="row">
-            <div class="col s12">
-                <h2>Survey Questions</h2>
-                <div class="row">
+            <div class="col-md-12">
+                <h1>Survey Questions</h1>
+                <hr>
+
+                <h3>About You</h3>
+
+                <form action="/api/friends" method="post">
+                    <div class="form-group">
+                        <label class="form-control-label" for="user_name">Enter your name</label>
+                        <input type="text" class="form-control" id="user_name" placeholder="John Doe" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-control-label" for="user_photo">Link to your photo</label>
+                        <input type="text" class="form-control" id="user_photo">
+                    </div>
+
+                </form>
+                <h3>Rate the statements below from 1 (Strongly Disagree) to 5 (Strongly Agree)</h3>
+                <div class="form-group">
+                    <h5>Puppies are cute.</h5>
+                    <span class="starRating">
+                        <input id="rating5" type="radio" name="q1" value="5">
+                        <label for="rating5">5</label>
+                        <input id="rating4" type="radio" name="q1" value="4">
+                        <label for="rating4">4</label>
+                        <input id="rating3" type="radio" name="q1" value="3">
+                        <label for="rating3">3</label>
+                        <input id="rating2" type="radio" name="q1" value="2">
+                        <label for="rating2">2</label>
+                        <input id="rating1" type="radio" name="q1" value="1">
+                        <label for="rating1">1</label>
+                    </span>
+                </div>
+                <div class="form-group">
+                    <h5>Cats are mean.</h5>
+                    <span class="starRating">
+                        <input id="q2rating5" type="radio" name="q2" value="5">
+                        <label for="q2rating5">5</label>
+                        <input id="q2rating4" type="radio" name="q2" value="4">
+                        <label for="q2rating4">4</label>
+                        <input id="q2rating3" type="radio" name="q2" value="3">
+                        <label for="q2rating3">3</label>
+                        <input id="q2rating2" type="radio" name="q2" value="2">
+                        <label for="q2rating2">2</label>
+                        <input id="q2rating1" type="radio" name="q2" value="1">
+                        <label for="q2rating1">1</label>
+                    </span>
+                </div>
+                <div class="form-group">
+                    <h5>Dragons are cool.</h5>
+                    <span class="starRating">
+                        <input id="q3rating5" type="radio" name="q3" value="5">
+                        <label for="q3rating5">5</label>
+                        <input id="q3rating4" type="radio" name="q3" value="4">
+                        <label for="q3rating4">4</label>
+                        <input id="q3rating3" type="radio" name="q3" value="3">
+                        <label for="q3rating3">3</label>
+                        <input id="q3rating2" type="radio" name="q3" value="2">
+                        <label for="q3rating2">2</label>
+                        <input id="q3rating1" type="radio" name="q3" value="1">
+                        <label for="q3rating1">1</label>
+                    </span>
+                </div>
+                <div class="form-group">
+                    <h5>I would kiss a frog.</h5>
+                    <span class="starRating">
+                        <input id="q4rating5" type="radio" name="q4" value="5">
+                        <label for="q4rating5">5</label>
+                        <input id="q4rating4" type="radio" name="q4" value="4">
+                        <label for="q4rating4">4</label>
+                        <input id="q4rating3" type="radio" name="q4" value="3">
+                        <label for="q4rating3">3</label>
+                        <input id="q4rating2" type="radio" name="q4" value="2">
+                        <label for="q4rating2">2</label>
+                        <input id="q4rating1" type="radio" name="q4" value="1">
+                        <label for="q4rating1">1</label>
+                    </span>
+                </div>
+                <div class="form-group">
+                    <h5>I fly like an ostrich.</h5>
+                    <span class="starRating">
+                        <input id="q5rating5" type="radio" name="q5" value="5">
+                        <label for="q5rating5">5</label>
+                        <input id="q5rating4" type="radio" name="q5" value="4">
+                        <label for="q5rating4">4</label>
+                        <input id="q5rating3" type="radio" name="q5" value="3">
+                        <label for="q5rating3">3</label>
+                        <input id="q5rating2" type="radio" name="q5" value="2">
+                        <label for="q5rating2">2</label>
+                        <input id="q5rating1" type="radio" name="q5" value="1">
+                        <label for="q5rating1">1</label>
+                    </span>
+                </div>
+                <div class="form-group">
+                    <h5>Dogs are organized.</h5>
+                    <span class="starRating">
+                        <input id="q6rating5" type="radio" name="q6" value="5">
+                        <label for="q6rating5">5</label>
+                        <input id="q6rating4" type="radio" name="q6" value="4">
+                        <label for="q6rating4">4</label>
+                        <input id="q6rating3" type="radio" name="q6" value="3">
+                        <label for="q6rating3">3</label>
+                        <input id="q6rating2" type="radio" name="q6" value="2">
+                        <label for="q6rating2">2</label>
+                        <input id="q6rating1" type="radio" name="q6" value="1">
+                        <label for="q6rating1">1</label>
+                    </span>
+                </div>
+                <div class="form-group">
+                    <h5>If I could be a tree I would be a tree.</h5>
+                    <span class="starRating">
+                        <input id="q7rating5" type="radio" name="q7" value="5">
+                        <label for="q7rating5">5</label>
+                        <input id="q7rating4" type="radio" name="q7" value="4">
+                        <label for="q7rating4">4</label>
+                        <input id="q7rating3" type="radio" name="q7" value="3">
+                        <label for="q7rating3">3</label>
+                        <input id="q7rating2" type="radio" name="q7" value="2">
+                        <label for="q7rating2">2</label>
+                        <input id="q7rating1" type="radio" name="q7" value="1">
+                        <label for="q7rating1">1</label>
+                    </span>
+                </div>
+                <div class="form-group">
+                    <h5>If I was a color, it would be orange.</h5>
+                    <span class="starRating">
+                        <input id="q8rating5" type="radio" name="q8" value="5">
+                        <label for="q8rating5">5</label>
+                        <input id="q8rating4" type="radio" name="q8" value="4">
+                        <label for="q8rating4">4</label>
+                        <input id="q8rating3" type="radio" name="q8" value="3">
+                        <label for="q8rating3">3</label>
+                        <input id="q8rating2" type="radio" name="q8" value="2">
+                        <label for="q8rating2">2</label>
+                        <input id="q8rating1" type="radio" name="q8" value="1">
+                        <label for="q8rating1">1</label>
+                    </span>
+                </div>
+                <div class="form-group">
+                    <h5>I watched all of the Harry Potter series.</h5>
+                    <span class="starRating">
+                        <input id="q9rating5" type="radio" name="q9" value="5">
+                        <label for="q9rating5">5</label>
+                        <input id="q9rating4" type="radio" name="q9" value="4">
+                        <label for="q9rating4">4</label>
+                        <input id="q9rating3" type="radio" name="q9" value="3">
+                        <label for="q9rating3">3</label>
+                        <input id="q9rating2" type="radio" name="q9" value="2">
+                        <label for="q9rating2">2</label>
+                        <input id="q9rating1" type="radio" name="q9" value="1">
+                        <label for="q9rating1">1</label>
+                    </span>
+                </div>
+                <div class="form-group">
+                    <h5>Dogs like to wolf.</h5>
+                    <span class="starRating">
+                        <input id="q10rating5" type="radio" name="q10" value="5">
+                        <label for="q10rating5">5</label>
+                        <input id="q10rating4" type="radio" name="q10" value="4">
+                        <label for="q10rating4">4</label>
+                        <input id="q10rating3" type="radio" name="q10" value="3">
+                        <label for="q10rating3">3</label>
+                        <input id="q10rating2" type="radio" name="q10" value="2">
+                        <label for="q10rating2">2</label>
+                        <input id="q10rating1" type="radio" name="q10" value="1">
+                        <label for="q10rating1">1</label>
+                    </span>
                 </div>
 
-                <div class="row">
-                    <div class="col s12">
-
-                        <form action="/api/friends" method="post">
-                            <div class="row">
-
-                                <div class="input-field col s12">
-                                    <input placeholder="Enter your name" name="name" id="user_name" type="text" class="validate">
-                                    <label for="user_name">Name</label>
-                                </div>
-                                <div class="input-field col s12">
-                                    <input placeholder="Link to picture" name="picture" id="picture_link" type="text" class="validate">
-                                    <label for="picture_link">Picture</label>
-                                </div>
-                            </div>
-                            <div class="row question">
-                                <h5>1) You like sports</h5>
-
-                                <p>
-                                    <input class="with-gap col s12 m2" name="questionq1" type="radio" id="q1a1" value='1' />
-                                    <label for="q1a1">Strong Disagree</label>
-
-                                    <input class="with-gap col s12 m2" name="questionq1" type="radio" id="q1a2" value='2' />
-                                    <label for="q1a2">Disagree</label>
-
-                                    <input class="with-gap col s12 m2" name="questionq1" type="radio" id="q1a3" value='3' />
-                                    <label for="q1a3">Neutral</label>
-
-                                    <input class="with-gap col s12 m2" name="questionq1" type="radio" id="q1a4" value='4' />
-                                    <label for="q1a4">Agree</label>
-
-                                    <input class="with-gap col s12 m2" name="questionq1" type="radio" id="q1a5" value='5' />
-                                    <label for="q1a5">Strongly Agree</label>
-                                </p>
-                            </div>
-
-                            <div class="row question">
-                                <h5>2) You like the UFC</h5>
-
-                                <p>
-                                    <input class="with-gap col s12 m2" name="questionq2" type="radio" id="q2a1" value='1' />
-                                    <label for="q2a1">Strong Disagree</label>
-
-                                    <input class="with-gap col s12 m2" name="questionq2" type="radio" id="q2a2" value='2' />
-                                    <label for="q2a2">Disagree</label>
-
-                                    <input class="with-gap col s12 m2" name="questionq2" type="radio" id="q2a3" value='3' />
-                                    <label for="q2a3">Neutral</label>
-
-                                    <input class="with-gap col s12 m2" name="questionq2" type="radio" id="q2a4" value='4' />
-                                    <label for="q2a4">Agree</label>
-
-                                    <input class="with-gap col s12 m2" name="questionq2" type="radio" id="q2a5" value='5' />
-                                    <label for="q2a5">Strongly Agree</label>
-                                </p>
-                            </div>
-
-                            <div class="row question">
-                                <h5>3) You are organized</h5>
-
-                                <p>
-                                    <input class="with-gap col s12 m2" name="questionq3" type="radio" id="q3a1" value='1' />
-                                    <label for="q3a1">Strong Disagree</label>
-
-                                    <input class="with-gap col s12 m2" name="questionq3" type="radio" id="q3a2" value='2' />
-                                    <label for="q3a2">Disagree</label>
-
-                                    <input class="with-gap col s12 m2" name="questionq3" type="radio" id="q3a3" value='3' />
-                                    <label for="q3a3">Neutral</label>
-
-                                    <input class="with-gap col s12 m2" name="questionq3" type="radio" id="q3a4" value='4' />
-                                    <label for="q3a4">Agree</label>
-
-                                    <input class="with-gap col s12 m2" name="questionq3" type="radio" id="q3a5" value='5' />
-                                    <label for="q3a5">Strongly Agree</label>
-                                </p>
-                            </div>
-
-                            <div class="row question">
-                                <h5>4) You are quitter</h5>
-
-                                <p>
-                                    <input class="with-gap col s12 m2" name="questionq4" type="radio" id="q4a1" value='1' />
-                                    <label for="q4a1">Strong Disagree</label>
-
-                                    <input class="with-gap col s12 m2" name="questionq4" type="radio" id="q4a2" value='2' />
-                                    <label for="q4a2">Disagree</label>
-
-                                    <input class="with-gap col s12 m2" name="questionq4" type="radio" id="q4a3" value='3' />
-                                    <label for="q4a3">Neutral</label>
-
-                                    <input class="with-gap col s12 m2" name="questionq4" type="radio" id="q4a4" value='4' />
-                                    <label for="q4a4">Agree</label>
-
-                                    <input class="with-gap col s12 m2" name="questionq4" type="radio" id="q4a5" value='5' />
-                                    <label for="q4a5">Strongly Agree</label>
-                                </p>
-                            </div>
-
-                            <div class="row question">
-                                <h5>5) You are a lover</h5>
-
-                                <p>
-                                    <input class="with-gap col s12 m2" name="questionq5" type="radio" id="q5a1" value='1' />
-                                    <label for="q5a1">Strong Disagree</label>
-
-                                    <input class="with-gap col s12 m2" name="questionq5" type="radio" id="q5a2" value='2' />
-                                    <label for="q5a2">Disagree</label>
-
-                                    <input class="with-gap col s12 m2" name="questionq5" type="radio" id="q5a3" value='3' />
-                                    <label for="q5a3">Neutral</label>
-
-                                    <input class="with-gap col s12 m2" name="questionq5" type="radio" id="q5a4" value='4' />
-                                    <label for="q5a4">Agree</label>
-
-                                    <input class="with-gap col s12 m2" name="questionq5" type="radio" id="q5a5" value='5' />
-                                    <label for="q5a5">Strongly Agree</label>
-                                </p>
-                            </div>
-
-                            <div class="row question">
-                                <h5>6) You are a fighter</h5>
-
-                                <p>
-                                    <input class="with-gap col s12 m2" name="questionq6" type="radio" id="q6a1" value='1' />
-                                    <label for="q6a1">Strong Disagree</label>
-
-                                    <input class="with-gap col s12 m2" name="questionq6" type="radio" id="q6a2" value='2' />
-                                    <label for="q6a2">Disagree</label>
-
-                                    <input class="with-gap col s12 m2" name="questionq6" type="radio" id="q6a3" value='3' />
-                                    <label for="q6a3">Neutral</label>
-
-                                    <input class="with-gap col s12 m2" name="questionq6" type="radio" id="q6a4" value='4' />
-                                    <label for="q6a4">Agree</label>
-
-                                    <input class="with-gap col s12 m2" name="questionq6" type="radio" id="q6a5" value='5' />
-                                    <label for="q6a5">Strongly Agree</label>
-                                </p>
-                            </div>
-
-                            <div class="row question">
-                                <h5>7) Game of Thrones is the best show.</h5>
-
-                                <p>
-                                    <input class="with-gap col s12 m2" name="questionq7" type="radio" id="q7a1" value='1' />
-                                    <label for="q7a1">Strong Disagree</label>
-
-                                    <input class="with-gap col s12 m2" name="questionq7" type="radio" id="q7a2" value='2' />
-                                    <label for="q7a2">Disagree</label>
-
-                                    <input class="with-gap col s12 m2" name="questionq7" type="radio" id="q7a3" value='3' />
-                                    <label for="q7a3">Neutral</label>
-
-                                    <input class="with-gap col s12 m2" name="questionq7" type="radio" id="q7a4" value='4' />
-                                    <label for="q7a4">Agree</label>
-
-                                    <input class="with-gap col s12 m2" name="questionq7" type="radio" id="q7a5" value='5' />
-                                    <label for="q7a5">Strongly Agree</label>
-                                </p>
-                            </div>
-
-                            <div class="row question">
-                                <h5>8) Sushi is the best food.</h5>
-
-                                <p>
-                                    <input class="with-gap col s12 m2" name="questionq8" type="radio" id="q8a1" value='1' />
-                                    <label for="q8a1">Strong Disagree</label>
-
-                                    <input class="with-gap col s12 m2" name="questionq8" type="radio" id="q8a2" value='2' />
-                                    <label for="q8a2">Disagree</label>
-
-                                    <input class="with-gap col s12 m2" name="questionq8" type="radio" id="q8a3" value='3' />
-                                    <label for="q8a3">Neutral</label>
-
-                                    <input class="with-gap col s12 m2" name="questionq8" type="radio" id="q8a4" value='4' />
-                                    <label for="q8a4">Agree</label>
-
-                                    <input class="with-gap col s12 m2" name="questionq8" type="radio" id="q8a5" value='5' />
-                                    <label for="q8a5">Strongly Agree</label>
-                                </p>
-                            </div>
-
-                            <div class="row question">
-                                <h5>9) Jim Carrey is funny</h5>
-
-                                <p>
-                                    <input class="with-gap col s12 m2" name="questionq9" type="radio" id="q9a1" value='1' />
-                                    <label for="q9a1">Strong Disagree</label>
-
-                                    <input class="with-gap col s12 m2" name="questionq9" type="radio" id="q9a2" value='2' />
-                                    <label for="q9a2">Disagree</label>
-
-                                    <input class="with-gap col s12 m2" name="questionq9" type="radio" id="q9a3" value='3' />
-                                    <label for="q9a3">Neutral</label>
-
-                                    <input class="with-gap col s12 m2" name="questionq9" type="radio" id="q9a4" value='4' />
-                                    <label for="q9a4">Agree</label>
-
-                                    <input class="with-gap col s12 m2" name="questionq9" type="radio" id="q9a5" value='5' />
-                                    <label for="q9a5">Strongly Agree</label>
-                                </p>
-                            </div>
-
-                            <div class="row question">
-                                <h5>10) Jackson is the best Michael</h5>
-
-                                <p>
-                                    <input class="with-gap col s12 m2" name="questionq10" type="radio" id="q10a1" value='1' />
-                                    <label for="q10a1">Strong Disagree</label>
-
-                                    <input class="with-gap col s12 m2" name="questionq10" type="radio" id="q10a2" value='2' />
-                                    <label for="q10a2">Disagree</label>
-
-                                    <input class="with-gap col s12 m2" name="questionq10" type="radio" id="q10a3" value='3' />
-                                    <label for="q10a3">Neutral</label>
-
-                                    <input class="with-gap col s12 m2" name="questionq10" type="radio" id="q10a4" value='4' />
-                                    <label for="q10a4">Agree</label>
-
-                                    <input class="with-gap col s12 m2" name="questionq10" type="radio" id="q10a5" value='5' />
-                                    <label for="q10a5">Strongly Agree</label>
-                                </p>
-                            </div>
-
-                            <!-- submit button -->
-                            <button class="btn waves-effect waves-light blue darken-2" type="submit">Submit
-                                <i class="material-icons right">send</i>
-                            </button>
-
-                        </form>
-                    </div>
-                
-                    <!-- Modal Trigger -->
-                    <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a>
-
-                    <!-- Modal Structure -->
-                    <div id="modal1" class="modal">
-                        <div class="modal-content">
-                            <h4>You got a match!</h4>
-                            <p>Name</p>
-                            <p><img src="http://media.londolozi.com/wp-content/uploads/2012/08/22190653/blog.anteater.jpg" style="height:300px" alt=""></p>
-                        </div>
-                    </div>
-
-
-
+                <button class="btn btn-lg btn-primary" id="submitButton" type="submit">Submit</button>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Pet matched</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div id="exampleModalBody" class="modal-body">
+                    ...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>
     </div>
-    <!--Import jQuery before materialize.js-->
-    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-    
-    <script>
-        
-            $('.modal').modal({
-                dismissible: true, // Modal can be dismissed by clicking outside of the modal
-                opacity: .5, // Opacity of modal background
-                inDuration: 300, // Transition in duration
-                outDuration: 200, // Transition out duration
-                startingTop: '5%', // Starting top style attribute
-                endingTop: '15%', // Ending top style attribute
-                ready: function (modal, trigger) { // Callback for Modal open. Modal and trigger parameters available.
-                    // alert("Ready");
-                    console.log(modal, trigger);
-                },
-                // complete: function () { alert('Closed'); } // Callback for Modal close
-            }
-            );
-        
-    </script>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1"
+        crossorigin="anonymous"></script>
+
+    <script src="./assets/js/main.js"></script>
 </body>
 
 </html>

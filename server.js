@@ -6,6 +6,8 @@ var htmlRoutes = require("./routes/htmlRoutes");
 var apiRoutes = require("./routes/apiRoutes");
 
 var app = express();
+
+app.use(express.static('public'));
 app.use("/", apiRoutes);
 app.use("/", htmlRoutes);
 
